@@ -1,0 +1,43 @@
+{
+  "name": "@derekprovance/firefly-iii-sdk",
+  "version": "6.1.24-v1.3",
+  "description": "SDK for Firefly III",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "compile": "tsc",
+    "generate": "ts-node scripts/generate-sdk.ts",
+    "build": "npm run clean && npm run generate && npm run compile",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "sdk",
+    "api"
+  ],
+  "author": "Derek Provance",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/derekprovance/budgeting-toolkit-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/derekprovance/budgeting-toolkit-cli/issues"
+  },
+  "homepage": "https://github.com/derekprovance/budgeting-toolkit-cli#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "@types/node-forge": "^1.3.11",
+    "openapi-typescript-codegen": "^0.29.0",
+    "ts-node": "^10.9.2"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "node-forge": "^1.3.1"
+  }
+}

@@ -1,0 +1,70 @@
+/* generated using openapi-typescript-codegen -- do not edit */
+/* istanbul ignore file */
+/* tslint:disable */
+/* eslint-disable */
+export const $RecurrenceStore = {
+    properties: {
+        type: {
+            type: 'RecurrenceTransactionType',
+            isRequired: true,
+        },
+        title: {
+            type: 'string',
+            isRequired: true,
+            format: 'string',
+        },
+        description: {
+            type: 'string',
+            description: `Not to be confused with the description of the actual transaction(s) being created.`,
+            format: 'string',
+        },
+        first_date: {
+            type: 'string',
+            description: `First time the recurring transaction will fire. Must be after today.`,
+            isRequired: true,
+            format: 'date',
+        },
+        repeat_until: {
+            type: 'string',
+            description: `Date until the recurring transaction can fire. Use either this field or repetitions.`,
+            isRequired: true,
+            isNullable: true,
+            format: 'date',
+        },
+        nr_of_repetitions: {
+            type: 'number',
+            description: `Max number of created transactions. Use either this field or repeat_until.`,
+            isNullable: true,
+            format: 'int32',
+        },
+        apply_rules: {
+            type: 'boolean',
+            description: `Whether or not to fire the rules after the creation of a transaction.`,
+            format: 'boolean',
+        },
+        active: {
+            type: 'boolean',
+            description: `If the recurrence is even active.`,
+            format: 'boolean',
+        },
+        notes: {
+            type: 'string',
+            isNullable: true,
+            format: 'string',
+        },
+        repetitions: {
+            type: 'array',
+            contains: {
+                type: 'RecurrenceRepetitionStore',
+            },
+            isRequired: true,
+        },
+        transactions: {
+            type: 'array',
+            contains: {
+                type: 'RecurrenceTransactionStore',
+            },
+            isRequired: true,
+        },
+    },
+} as const;
